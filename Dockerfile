@@ -21,7 +21,7 @@ WORKDIR /mm
 #ADD https://releases.mattermost.com/4.1.1/mattermost-team-4.1.1-linux-amd64.tar.gz .
 #RUN tar -zxvf ./mattermost-team-4.1.1-linux-amd64.tar.gz
 RUN curl -k https://releases.mattermost.com/$MM_VERSION/mattermost-team-$MM_VERSION-linux-amd64.tar.gz | tar -xvz 
-ADD config_docker.json ./config/config_docker.json 
+ADD config_docker.json ./mattermost/default/config_docker.json 
 ADD docker-entry.sh .
 
 RUN chmod +x ./docker-entry.sh
