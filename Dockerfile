@@ -21,7 +21,7 @@ WORKDIR /mm
 
 # Copy over files
 RUN curl -k https://releases.mattermost.com/$MM_VERSION/mattermost-team-$MM_VERSION-linux-amd64.tar.gz | tar -xvz 
-ADD config_docker.json ./mattermost/default/config_docker.json 
+ADD config_docker.json ./mattermost/config/config_docker.json 
 ADD docker-entry.sh .
 
 RUN chmod +x ./docker-entry.sh
