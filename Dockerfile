@@ -20,8 +20,6 @@ RUN apt-get update && apt-get install -y ca-certificates curl
 WORKDIR /mm
 
 # Copy over files
-#ADD https://releases.mattermost.com/4.1.1/mattermost-team-4.1.1-linux-amd64.tar.gz .
-#RUN tar -zxvf ./mattermost-team-4.1.1-linux-amd64.tar.gz
 RUN curl -k https://releases.mattermost.com/$MM_VERSION/mattermost-team-$MM_VERSION-linux-amd64.tar.gz | tar -xvz 
 ADD config_docker.json ./mattermost/default/config_docker.json 
 ADD docker-entry.sh .
@@ -34,4 +32,4 @@ RUN mkdir ./data
 VOLUME ./data
 
 # Ports
-EXPOSE 80
+EXPOSE 8080
